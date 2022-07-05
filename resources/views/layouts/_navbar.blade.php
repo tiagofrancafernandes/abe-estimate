@@ -24,6 +24,8 @@
                         <a class="dropdown-item" href="../5/darkly/_bootswatch.scss" download>_bootswatch.scss</a>
                     </div>
                 </li>
+
+                <x-menu-top-pages />
             </ul>
             <ul class="navbar-nav ms-md-auto">
                 <li class="nav-item">
