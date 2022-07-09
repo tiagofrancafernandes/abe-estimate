@@ -1,3 +1,15 @@
+## See the project dependencies [here](dependencies.md)
+
+### TODO
+- [ ] \(Optional) Login via Google
+
+### DONE
+- [ ] CRUD users :tada:
+----
+
+
+### Fork from [Demo-Laravel-CRUD](https://github.com/tiagofrancafernandes/Demo-Laravel-CRUD)
+
 # Demo-Laravel-CRUD
 > [EN] Example of a basic Crud in Laravel presented to a private student.
 >
