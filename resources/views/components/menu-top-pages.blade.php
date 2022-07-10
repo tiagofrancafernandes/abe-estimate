@@ -4,8 +4,11 @@
         <span class="caret"></span></a>
     <div class="dropdown-menu" aria-labelledby="menu-top-pages">
         @foreach ($pages as $page)
-        <a class="dropdown-item" href="#{{ $page->slug }}" download>{{ $page->title }}</a>
-        <div class="dropdown-divider"></div>
+            @if ($loop->index > 0)
+                <div class="dropdown-divider"></div>
+            @endif
+
+            <a class="dropdown-item" href="#{{ $page->slug }}">{{ $page->title }}</a>
         @endforeach
     </div>
 </li>

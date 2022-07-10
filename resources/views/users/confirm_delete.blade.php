@@ -16,7 +16,7 @@
 
     <div class="col-8 mb-4">
 
-        <form action="{{ route('users.delete', $user->id) }}" method="POST" class="d-inline">
+        <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="d-inline">
             @csrf
             @method('DELETE')
             <div class="d-flex justify-content-evenly">

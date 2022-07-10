@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Route;
 
-class UserControler extends Controller
+class UserController extends Controller
 {
+    public static function routes()
+    {
+        Route::get('users/{userId}/confirm_delete', [
+            UserController::class, 'confirmDelete'
+        ])->name('users.confirm_delete');
+
+        Route::resource('users', UserController::class);
+    }
+
     /**
      * function index
      *
@@ -136,8 +146,8 @@ class UserControler extends Controller
         $user->update($data);
 
         return redirect()
-                ->route('users.index')
-                ->with('success', __('Updated user'));
+            ->route('users.index')
+            ->with('success', __('Updated user'));
     }
 
     /**
@@ -171,8 +181,8 @@ class UserControler extends Controller
         }
 
         return redirect()
-                ->route('users.index')
-                ->with('success', __('User created successfully'));
+            ->route('users.index')
+            ->with('success', __('User created successfully'));
     }
 
     /**
@@ -195,7 +205,7 @@ class UserControler extends Controller
         $user->delete();
 
         return redirect()
-                ->route('users.index')
-                ->with('success', __('User deleted successfully'));
+            ->route('users.index')
+            ->with('success', __('User deleted successfully'));
     }
 }
