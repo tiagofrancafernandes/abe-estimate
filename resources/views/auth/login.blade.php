@@ -1,11 +1,9 @@
 @extends('layouts.basic')
 
-{{-- @section('action_title', __('List')) --}}
+@section('title', __('Login'))
 
 @section('content')
-    @if ($urlHash = session('url_hash') && is_string($urlHash)  && (
-            strpos($urlHash, '#') === 0
-        ))
+    @if ($urlHash = session('url_hash') && is_string($urlHash) && strpos($urlHash, '#') === 0)
     @endif
 
     <script>
@@ -16,21 +14,48 @@
 
     <div class="container">
         <div class="form">
-            <ul class="tab-group" data-tab-type="header">
-                <li class="tab active"><a data-tab-type="trigger" href="#login">Log In</a></li>
-                <li class="tab"><a data-tab-type="trigger" href="#signup">Sign Up</a></li>
+            <ul
+                class="tab-group"
+                data-tab-type="header"
+            >
+                <li class="tab active"><a
+                        data-tab-type="trigger"
+                        href="#login"
+                    >Log In</a></li>
+                <li class="tab"><a
+                        data-tab-type="trigger"
+                        href="#signup"
+                    >Sign Up</a></li>
             </ul>
 
             <div class="tab-content">
                 <div id="login">
                     <h1>Welcome Back!</h1>
-                    <form action="/" method="post">
-                        <div class="field-wrap"> <label> Email Address<span class="req">*</span> </label> <input increment-id="1"
-                                   type="email"required autocomplete="off" /> </div>
-                        <div class="field-wrap"> <label> Password<span class="req">*</span> </label> <input increment-id="2"
-                                   type="password"required autocomplete="off" /> </div>
+                    <form
+                        action="/"
+                        method="post"
+                    >
+                        <div class="field-wrap">
+                            <label> Email Address<span class="req">*</span> </label>
+                            <input
+                                increment-id="1"
+                                type="email"required
+                                autocomplete="off"
+                            />
+                        </div>
+                        <div class="field-wrap">
+                            <label> Password<span class="req">*</span> </label>
+                            <input
+                                increment-id="2"
+                                type="password"required
+                                autocomplete="off"
+                            />
+                        </div>
                         <p class="forgot">
-                            <a data-tab-type="trigger" href="#resetPassword">Forgot Password?</a>
+                            <a
+                                data-tab-type="trigger"
+                                href="#resetPassword"
+                            >Forgot Password?</a>
                         </p>
                         <button class="button button-block" />
                         Log In
@@ -40,35 +65,99 @@
 
                 <div id="signup">
                     <h1>Sign Up for Free</h1>
-                    <form action="/" method="post">
+                    <form
+                        action="/"
+                        method="post"
+                    >
                         <div class="top-row">
-                            <div class="field-wrap"> <label> First Name<span class="req">*</span> </label> <input increment-id="3"
-                                       type="text" required autocomplete="off" /> </div>
-                            <div class="field-wrap"> <label> Last Name<span class="req">*</span> </label> <input increment-id="4"
-                                       type="text"required autocomplete="off" /> </div>
+                            <div class="field-wrap">
+                                <label> First Name<span class="req">*</span> </label>
+                                <input
+                                    increment-id="3"
+                                    type="text"
+                                    required
+                                    autocomplete="off"
+                                />
+                            </div>
+                            <div class="field-wrap">
+                                <label> Last Name<span class="req">*</span> </label>
+                                <input
+                                    increment-id="4"
+                                    type="text"required
+                                    autocomplete="off"
+                                />
+                            </div>
                         </div>
-                        <div class="field-wrap"> <label> Email Address<span class="req">*</span> </label> <input increment-id="5"
-                                   type="email"required autocomplete="off" /> </div>
-                        <div class="field-wrap"> <label> Set A Password<span class="req">*</span> </label> <input increment-id="6"
-                                   type="password"required autocomplete="off" /> </div> <button type="submit"
-                                class="button button-block" />Get Started</button>
+                        <div class="field-wrap">
+                            <label> Email Address<span class="req">*</span> </label>
+                            <input
+                                increment-id="5"
+                                type="email"required
+                                autocomplete="off"
+                            />
+                        </div>
+                        <div class="field-wrap">
+                            <label> Set A Password<span class="req">*</span> </label>
+                            <input
+                                increment-id="6"
+                                type="password"required
+                                autocomplete="off"
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            class="button button-block"
+                        />Get Started
+                        </button>
                     </form>
                 </div>
 
                 <div id="resetPassword">
                     <h1>Reset password</h1>
-                    <form action="/" method="post">
+                    <form
+                        action="/"
+                        method="post"
+                    >
                         <div class="top-row">
-                            <div class="field-wrap"> <label> First Name<span class="req">*</span> </label> <input increment-id="7"
-                                       type="text" required autocomplete="off" /> </div>
-                            <div class="field-wrap"> <label> Last Name<span class="req">*</span> </label> <input increment-id="8"
-                                       type="text"required autocomplete="off" /> </div>
+                            <div class="field-wrap">
+                                <label> First Name<span class="req">*</span> </label>
+                                <input
+                                    increment-id="7"
+                                    type="text"
+                                    required
+                                    autocomplete="off"
+                                />
+                            </div>
+                            <div class="field-wrap">
+                                <label> Last Name<span class="req">*</span> </label>
+                                <input
+                                    increment-id="8"
+                                    type="text"required
+                                    autocomplete="off"
+                                />
+                            </div>
                         </div>
-                        <div class="field-wrap"> <label> Email Address<span class="req">*</span> </label> <input increment-id="9"
-                                   type="email"required autocomplete="off" /> </div>
-                        <div class="field-wrap"> <label> Set A Password<span class="req">*</span> </label> <input increment-id="10"
-                                   type="password"required autocomplete="off" /> </div> <button type="submit"
-                                class="button button-block" />Get Started</button>
+                        <div class="field-wrap">
+                            <label> Email Address<span class="req">*</span> </label>
+                            <input
+                                increment-id="9"
+                                type="email"required
+                                autocomplete="off"
+                            />
+                        </div>
+                        <div class="field-wrap">
+                            <label> Set A Password<span class="req">*</span> </label>
+                            <input
+                                increment-id="10"
+                                type="password"required
+                                autocomplete="off"
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            class="button button-block"
+                        />Get Started
+                        </button>
                     </form>
                 </div>
             </div><!-- tab-content -->
