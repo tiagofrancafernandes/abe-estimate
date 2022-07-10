@@ -3,6 +3,15 @@
 {{-- @section('action_title', __('List')) --}}
 
 @section('content')
+    @if ($urlHash = session('url_hash') && is_string($urlHash)  && (
+            strpos($urlHash, '#') === 0
+        ))
+    @endif
+
+    <script>
+        window.location.hash = window.location.hash ? window.location.hash : {{ $urlHash ?? '' }};
+    </script>
+
     <script src="{{ asset('js/admin/fade-efect.js') }}"></script>
 
     <div class="container">
