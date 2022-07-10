@@ -90,7 +90,7 @@ label {
     left: 13px;
     color: rgba(255, 255, 255, 0.5);
     transition: all 0.25s ease;
-    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     pointer-events: none;
     font-size: 22px;
 }
@@ -103,7 +103,7 @@ label .req {
 label.active {
     transform: translateY(50px);
     left: 2px;
-    font-size: 14px;
+    font-size: 10pt;
 }
 
 label.active .req {
@@ -112,6 +112,12 @@ label.active .req {
 
 label.highlight {
     color: #ffffff;
+}
+
+label.active.highlight {
+    font-weight: bolder;
+    /* transition: all 0.1s ease; */
+    transition: none;
 }
 
 input, textarea {
