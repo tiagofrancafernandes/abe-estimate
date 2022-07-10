@@ -7,6 +7,11 @@ Route::get('/', function () {
     return redirect()->route('users.index');
 })->name('index');
 
-Route::prefix('secure')->group(function () {
+Route::middleware([
+    'auth',
+])
+->prefix('secure')->group(function () {
     UserController::routes();
 });
+
+require __DIR__ . '/auth.php';

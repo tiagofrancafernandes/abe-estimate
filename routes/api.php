@@ -14,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::get('/', function () {
+    if (config('app.debug') && in_array(config('app.env'), ['local', 'dev', 'demo'])) {
+        return [
+            'env' => config('app.env'),
+            'Laravel' => app()->version()
+        ];
+    }
+
+    abort(404);
+});
+
+Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });

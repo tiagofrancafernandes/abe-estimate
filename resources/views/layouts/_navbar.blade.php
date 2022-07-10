@@ -16,7 +16,6 @@
 
                 <x-menu-top-pages />
 
-
                 @foreach (config('app-menu.left') as $item)
                     @if (
                         (!\Auth::user() && ($item['show_if_auth_is'] ?? 'both') == 'auth') ||
